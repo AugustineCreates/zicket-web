@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import Card from "./card";
 import { EmptyStateIcon } from "@/public/svg/svg";
 import CustomDropdown from "./CustomDropdown";
-import { dummyEvents } from "@/lib/dummyEvents/events";
 import SkeletonCard from "./SkeletonCard";
-import type { EventType } from "@/lib/dummyEvents/events";
+import type { EventType, Event } from "@/lib/dummyEvents/events";
 
-function MainContent() {
-  const [events] = useState(dummyEvents);
+interface MainContentProps {
+  initialEvents?: Event[];
+}
+
+function MainContent({ initialEvents = [] }: MainContentProps) {
+  const [events] = useState<Event[]>(initialEvents);
   const [selectedPrivacy, setSelectedPrivacy] = useState<string | null>(null);
   const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
