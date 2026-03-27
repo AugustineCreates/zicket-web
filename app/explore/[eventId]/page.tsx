@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import EventDetailClient from "@/app/components/explore/EventDetailClient";
-import { getEventById, getAllEventIds, generateEventMetadata } from "@/lib/dataFetching";
+import EventSlider from "@/app/components/EventSlider";
+import { getEventById, getAllEventIds } from "@/lib/dataFetching";
 
 type Props = {
   params: Promise<{ eventId: string }>;

@@ -86,7 +86,7 @@ export async function getAllEventIds(): Promise<string[]> {
  * Generate metadata for an event
  * Creates SEO-optimized metadata without exposing user context
  */
-export function generateEventMetadata(event: Event | null) {
+export async function generateEventMetadata(event: Event | null) {
   if (!event) {
     return {
       title: 'Event Not Found',
